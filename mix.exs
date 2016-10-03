@@ -8,10 +8,7 @@ defmodule ExAvro.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      description: "A light Elixir wrapper around eavro for parsing Avro protocol files.",
-     licenses: "MIT",
-     links: %{
-       "github" => "https://github.com/avvo/ex_avro",
-     },
+     package: package(),
      deps: deps()]
   end
 
@@ -39,6 +36,16 @@ defmodule ExAvro.Mixfile do
   defp deps do
     [
       {:eavro, git: "https://github.com/sifoxdevteam/eavro.git", tag: "v0.0.3"},
+    ]
+  end
+
+  defp package do
+    [
+     licenses: ["MIT"],
+     links: %{
+       "github" => "https://github.com/avvo/ex_avro",
+     },
+     maintainers: ["Donald Plummer"],
     ]
   end
 end
