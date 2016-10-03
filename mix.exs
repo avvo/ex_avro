@@ -18,8 +18,6 @@ defmodule ExAvro.Mixfile do
   def application do
     [
       applications: [
-        :logger,
-        :eavro,
       ]
     ]
   end
@@ -35,7 +33,7 @@ defmodule ExAvro.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:eavro, git: "https://github.com/sifoxdevteam/eavro.git", tag: "v0.0.3"},
+      {:eavro, git: "https://github.com/sifoxdevteam/eavro.git", tag: "v0.0.3", only: :test},
     ]
   end
 
