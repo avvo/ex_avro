@@ -7,6 +7,11 @@ defmodule ExAvro.Mixfile do
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     description: "A light Elixir wrapper around eavro for parsing Avro protocol files.",
+     licenses: "MIT",
+     links: %{
+       "github" => "https://github.com/avvo/ex_avro",
+     },
      deps: deps()]
   end
 

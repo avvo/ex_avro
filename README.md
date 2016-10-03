@@ -1,10 +1,11 @@
 # ExAvro
 
-**TODO: Add description**
+A light Elixir wrapper around [eavro](https://github.com/SIfoxDevTeam/eavro)
+for parsing Avro protocol files.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+The package can be installed as:
 
   1. Add `ex_avro` to your list of dependencies in `mix.exs`:
 
