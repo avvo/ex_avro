@@ -1,4 +1,6 @@
-%{"eavro": {:git, "https://github.com/sifoxdevteam/eavro.git", "86c15327f10455ce93746dbf03d3e07c0acbea77", [tag: "v0.0.3"]},
+%{"earmark": {:hex, :earmark, "1.0.1", "2c2cd903bfdc3de3f189bd9a8d4569a075b88a8981ded9a0d95672f6e2b63141", [:mix], []},
+  "eavro": {:git, "https://github.com/sifoxdevteam/eavro.git", "86c15327f10455ce93746dbf03d3e07c0acbea77", [tag: "v0.0.3"]},
+  "ex_doc": {:hex, :ex_doc, "0.14.1", "bfed8d4e93c755e2b150be925ad2cfa6af7c3bfcacc3b609f45f6048c9d623d6", [:mix], [{:earmark, "~> 1.0", [hex: :earmark, optional: false]}]},
   "jsx": {:git, "https://github.com/talentdeficit/jsx.git", "d011411c23e9f8c29d98aa1b7a50ddf9709b6a60", [tag: "v1.4.5"]},
   "ranch": {:git, "https://github.com/extend/ranch.git", "22e0f96a6ca9288dca338ffec53f15da06abd839", [ref: "22e0f96"]},
   "zlists": {:git, "https://github.com/vjache/erlang-zlists.git", "6a7a626b52ab004f152792877b83f09dfaea07d5", [branch: "master"]}}

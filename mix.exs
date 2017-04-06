@@ -34,6 +34,7 @@ defmodule ExAvro.Mixfile do
   defp deps do
     [
       {:eavro, git: "https://github.com/sifoxdevteam/eavro.git", tag: "v0.0.3", only: :test},
+      {:ex_doc, ">= 0.0.0", only: :dev},
     ]
   end
 

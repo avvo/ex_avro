@@ -9,7 +9,9 @@ defmodule ExAvro do
     |> elixir_convert()
   end
 
-  defmodule Protocol, do: defstruct [:ns, :name, :records, :messages, :json]
+  defmodule Protocol do
+    defstruct [ns: "", name: "", records: [], messages: [], json: ""]
+  end
   defmodule Record, do: defstruct [:name, :fields]
   defmodule Message, do: defstruct [:name, :args, :return]
   defmodule Field, do: defstruct [:name, :type]
@@ -24,28 +26,27 @@ defmodule ExAvro do
       json: json,
     }
   end
-
   def elixir_convert({:avro_record, name, fields}) do
     %Record{
       name: name,
       fields: fields |> Enum.map(&field_convert/1),
     }
   end
-
   def elixir_convert({:avro_array, record}) do
     {:array, record |> elixir_convert()}
   end
-
   def elixir_convert({:avro_enum, name, values}) do
     %AvroEnum{name: name, values: values}
   end
-
   def elixir_convert({:avro_message, name, args, return}) do
     %Message{
       name: name,
       args: args |> Enum.map(&elixir_convert/1),
       return: return |> elixir_convert(),
     }
+  end
+  def elixir_convert({:avro_map, values}) do
+    {:avro_map, values |> elixir_convert()}
   end
   def elixir_convert(:null), do: nil
   def elixir_convert(value) when is_list(value), do: {:union, value |> Enum.map(&elixir_convert/1)}
